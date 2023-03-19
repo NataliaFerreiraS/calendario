@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: darkred;
+}
+
+.wrapper {
+    width: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: #520101 5px 5px 12px, black 5px 5px 50px;
+}
+
+.wrapper header {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+    color: DarkRed;
+}
+
+header .current-date {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+header .icons span {
+    height: 38px;
+    width: 38px;
+    color: DarkRed;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+header .icons span:hover {
+    background: BurlyWood;
+}
+header .icons span:last-child {
+    margin-right: -10px;
+}
+.calendar{
+    padding: 20px;
+}
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calendar ul li{
+    position: relative;
+    width: calc(100% / 7);
+    }
+.calendar .weeks li{
+    color:#520101;
+    font-weight: 1000;
+}
+.calendar .days{
+    color:#520101;
+    margin-bottom: 20px;
+}
+.calendar .days li{
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.days li.inactive{
+    color: Peru;
+}
+.days li.active{
+    color: #fff;
+}
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 35px;
+    width: 35px;
+    top: -40%;
+    left: 20%;
+    z-index: -1;
+    transform: translate (-50%, -50%);
+    border-radius: 50%;
+}
+.days li:hover::before{
+    background: BurlyWood;
+}
+.days li.active::before{
+    background: DarkRed;
+}
